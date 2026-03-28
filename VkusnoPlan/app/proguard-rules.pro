@@ -1,4 +1,0 @@
--keep class com.vkusnoplan.app.data.model.** { *; }
--keep class com.vkusnoplan.app.network.** { *; }
--dontwarn okhttp3.**
--dontwarn retrofit2.**
