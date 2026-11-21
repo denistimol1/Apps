@@ -13,6 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Unpack project ZIP (if uploaded as zip)
+        run: |
+          if [ -f VkusnoPlan.zip ]; then
+            unzip -oq VkusnoPlan.zip
+            echo "ZIP unpacked"
+          fi
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -53,8 +60,3 @@ jobs:
           name: VkusnoPlan-debug
           path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk
           retention-days: 30
-
-
-
-
-
